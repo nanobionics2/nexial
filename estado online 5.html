@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Estado Online 5.0 — NexialBusiness</title>
+  <style>
+    :root{
+      /* Paleta: indigo (governança) + ciano elétrico (infra digital) + dourado (valor público) */
+      --bg: #0b0f1f;          /* indigo-escuro */
+      --hero: #101634;        /* indigo profundo */
+      --panel: #121b3f;       /* seções */
+      --card: #152055;        /* cartões */
+      --text: #ebf2ff;        /* off-white azulado */
+      --muted:#a9b8d7;        /* cinza-azul suave */
+      --accent:#60a5fa;       /* azul elétrico */
+      --accent-2:#22d3ee;     /* ciano */
+      --accent-3:#fbbf24;     /* dourado */
+      --shadow: rgba(34,211,238,.14);
+      --ring: rgba(96,165,250,.22);
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin:0; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(1200px 800px at 85% -10%, rgba(96,165,250,.10), transparent 60%),
+                  radial-gradient(900px 700px at -10% 25%, rgba(34,211,238,.10), transparent 60%),
+                  var(--bg);
+      color:var(--text); line-height:1.65;
+    }
+
+    header{
+      background: linear-gradient(180deg, var(--hero) 0%, rgba(16,22,52,.92) 60%, transparent 100%);
+      padding: 56px 20px 24px; text-align:center; position:relative; overflow:hidden;
+    }
+    .brand-badge{
+      display:inline-block; padding:6px 12px; border-radius:999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-3));
+      color:#0b0f1f; font-weight:700; font-size:12px; letter-spacing:.4px;
+      box-shadow: 0 0 0 6px var(--ring), 0 10px 30px var(--shadow);
+    }
+    h1{ margin:18px auto 10px; font-size:36px; max-width:1080px; line-height:1.15; letter-spacing:.2px; }
+    .subtitle{ color:var(--muted); max-width:980px; margin:10px auto 26px; font-size:18px; }
+    .cta-row{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:6px auto 10px; }
+    .btn{ display:inline-block; padding:12px 18px; border-radius:12px; text-decoration:none; font-weight:700; border:1px solid transparent; transition:.2s; font-size:15px; }
+    .btn-primary{ background: linear-gradient(90deg, var(--accent), var(--accent-3)); color:#0b0f1f; }
+    .btn-primary:hover{ transform: translateY(-1px); box-shadow:0 8px 24px var(--shadow); }
+    .btn-ghost{ border-color:rgba(255,255,255,.16); color:var(--text); background:rgba(255,255,255,.03); }
+    .btn-ghost:hover{ border-color:rgba(255,255,255,.32); background:rgba(255,255,255,.06); }
+    .btn-invest{ background:var(--accent-3); color:#0b0f1f; }
+    .btn-invest:hover{ filter:brightness(1.06); }
+
+    .wrap{ max-width:1100px; margin: 24px auto 60px; padding: 0 20px; }
+    section{ background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:28px; margin:18px 0; box-shadow: 0 10px 30px var(--shadow); }
+    section h2{ margin:0 0 12px; font-size:24px; color:var(--accent); letter-spacing:.3px; }
+    p{ margin:0 0 14px; font-size:17px; }
+    ul{ margin: 8px 0 6px 0; padding-left: 18px; } li{ margin:8px 0; }
+    .grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+    .grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
+    .card{ background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:18px; }
+    .dot{ color:var(--accent-2); margin-right:6px; }
+    .badge{ display:inline-block; font-size:12px; font-weight:700; letter-spacing:.3px; padding:6px 10px; border-radius:999px; background: rgba(96,165,250,.12); color: var(--accent); border:1px solid rgba(96,165,250,.35); }
+    .note{ color:var(--muted); font-size:15px; }
+    .ribbon{ background: linear-gradient(90deg, rgba(96,165,250,.12), rgba(251,191,36,.12)); border:1px dashed rgba(255,255,255,.16); padding:14px 16px; border-radius:12px; text-align:center; margin: 18px 0 8px; color:var(--muted); }
+    .kpis{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+    .kpi{ background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); padding:8px 10px; border-radius:10px; font-size:14px; color:var(--text); }
+
+    footer{ text-align:center; color:var(--muted); font-size:14px; padding:28px 0 40px; }
+    @media (max-width: 900px){ .grid-2,.grid-3{ grid-template-columns: 1fr; } h1{ font-size:28px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="brand-badge">NEXIALBUSINESS • Programa Executivo</span>
+    <h1>Estado Online 5.0 — Plataforma de Governança &amp; Receita por Desfecho (A Destruição Criativa da Burocracia)</h1>
+    <p class="subtitle">
+      Inovação radical em governança: <strong>Identidade Digital &amp; Registros</strong>, <strong>Pagamentos &amp; Tesouraria</strong>,
+      <strong>Orquestração de Serviços</strong>, <strong>Data Mesh Cidadão</strong> e <strong>Economia Anti-Assimétrica</strong> — decisões claras (buy vs. build, risco, ROI)
+      e <strong>MVP/POC em 90 dias</strong> com compliance desde o design.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://wa.me/5591980144854" target="_blank">📱 Falar no WhatsApp</a>
+      <a class="btn btn-ghost" href="mailto:drclaudiocutrim@gmail.com" target="_blank">📧 Solicitar Proposta</a>
+      <a class="btn btn-invest" href="#investimento">💰 Ver Investimento</a>
+    </div>
+    <div class="ribbon">Curso Livre com Certificação Executiva • Formato para Donos, Diretores, Gestores Públicos &amp; Investidores</div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>O que é a NexialBusiness (NB)</h2>
+      <p>
+        A <strong>NexialBusiness</strong> forma líderes para criar um <strong>Estado como Plataforma</strong> —
+        eficiente, mensurável e orientado a desfechos. Você aprende o <strong>Essencial Tecnológico e Científico</strong>
+        em linguagem de negócio para decidir <em>buy vs. build</em>, reduzir riscos jurídicos e
+        <strong>executar pilotos de alto impacto</strong> com KPIs de serviço e sustentabilidade fiscal.
+      </p>
+      <div class="grid-3">
+        <div class="card"><span class="badge">Decisão</span><p><span class="dot">●</span>Decision Memos (1 pág.): problema, opções, ROI, risco e próximo passo (14 dias).</p></div>
+        <div class="card"><span class="badge">Arquitetura</span><p><span class="dot">●</span>Mapa de Solução: identidade, registros, pagamentos, serviços e dados.</p></div>
+        <div class="card"><span class="badge">Execução</span><p><span class="dot">●</span>Plano MVP/POC 90 dias: 3 sprints, KPIs e orçamento com gates.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Por que este programa é diferente</h2>
+      <div class="grid-2">
+        <div class="card">
+          <p><span class="dot">●</span><strong>Do front-end ao Estado-máquina:</strong> não é “govtech cosmética”, é arquitetura de núcleo.</p>
+          <p><span class="dot">●</span><strong>Sem silos:</strong> jurídico, economia, dados e engenharia orquestrados.</p>
+          <p><span class="dot">●</span><strong>Moats públicos:</strong> <em>Economia Anti-Assimétrica</em> com dados, contratos por desempenho e canais diretos.</p>
+        </div>
+        <div class="card">
+          <p><span class="dot">●</span><strong>Compliance por design:</strong> devido processo algorítmico, LGPD, auditoria contínua e accountability.</p>
+          <p><span class="dot">●</span><strong>Do quadro ao serviço:</strong> pilotos rápidos, dados reais e plano de escala 90→180 dias.</p>
+          <p class="note">Marketing: “Destruição Criativa” • Conselho: “Executiva &amp; Fiscalmente Responsável”.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Público-Alvo</h2>
+      <div class="grid-3">
+        <div class="card"><p><span class="dot">●</span>Founders &amp; consórcios público-privados de plataforma cívica.</p></div>
+        <div class="card"><p><span class="dot">●</span>Gestores públicos (inovação, fazenda, saúde, educação, serviços).</p></div>
+        <div class="card"><p><span class="dot">●</span>Investidores de infraestrutura digital e reguladores.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Como funciona</h2>
+      <ul>
+        <li><strong>Duração:</strong> 8–12 semanas • 2 encontros/semana (sessão executiva + Schumpeter Lab).</li>
+        <li><strong>Formato:</strong> aulas gravadas curtas + encontros ao vivo + templates.</li>
+        <li><strong>Entrega:</strong> Decision Memos, Mapa de Solução e Plano MVP/POC 90 dias.</li>
+        <li><strong>Certificação:</strong> Curso livre com certificação executiva.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Conteúdo Programático — Estado Online 5.0 (Executivo Nexial)</h2>
+      <div class="grid-2">
+        <div class="card">
+          <p><span class="dot">●</span><strong>Identidade Digital &amp; Registros</strong> — KYC cidadão, cadastros, títulos e cadeia de custódia.</p>
+          <p><span class="dot">●</span><strong>Pagamentos, Tesouraria &amp; Benefícios</strong> — rails, carteiras, compliance, fraude e reconciliação.</p>
+          <p><span class="dot">●</span><strong>Orquestração de Serviços (IA)</strong> — fluxo fim-a-fim: licenças, saúde, educação e assistência.</p>
+          <p><span class="dot">●</span><strong>Administração &amp; Operações 5.0</strong> — processos, SLAs, contratos por desempenho.</p>
+          <p><span class="dot">●</span><strong>Economia Política Anti-Assimétrica</strong> — desenho de incentivos, tarifas e receitas por desfecho.</p>
+        </div>
+        <div class="card">
+          <p><span class="dot">●</span><strong>Data Mesh Cidadão</strong> — interoperabilidade, consentimento e analítica de políticas.</p>
+          <p><span class="dot">●</span><strong>Direito Aplicado</strong> — Anti-Contenda, Neurodireito, Descentralizado e LGPD.</p>
+          <p><span class="dot">●</span><strong>Economia das Doenças (e-Saúde Pública)</strong> — prevenção, custo total e contratos por resultado.</p>
+          <p><span class="dot">●</span><strong>Plataformas &amp; Ecossistemas</strong> — marketplaces de serviços públicos/privados.</p>
+          <p><span class="dot">●</span><strong>Parcerias &amp; RFP</strong> — critérios, sandbox regulatório e observabilidade.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Eixo Jurídico Nexial (Aplicado à Governança Digital)</h2>
+      <div class="grid-2">
+        <div class="card">
+          <p><span class="dot">●</span><strong>Direito Anti-Contenda</strong> — prevenção de litígios, evidências automatizadas, accountability.</p>
+          <p><span class="dot">●</span><strong>Neurodireito</strong> — devido processo algorítmico e explicabilidade.</p>
+        </div>
+        <div class="card">
+          <p><span class="dot">●</span><strong>Direito Descentralizado</strong> — contratos inteligentes e registros imutáveis (quando fizer sentido).</p>
+          <p><span class="dot">●</span><strong>Cripto &amp; Tokenização com Compliance</strong> — repasses, benefícios, incentivos e KYC/AML/fiscal.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>KPIs do MVP/POC (90 dias)</h2>
+      <div class="kpis">
+        <div class="kpi">Custo por serviço/cidadão</div>
+        <div class="kpi">Tempo de licença/benefício</div>
+        <div class="kpi">Conformidade &amp; auditorias</div>
+        <div class="kpi">Taxa de adoção digital</div>
+        <div class="kpi">Receita por desfecho</div>
+        <div class="kpi">Índice de disputas</div>
+        <div class="kpi">Satisfação do cidadão</div>
+      </div>
+    </section>
+
+    <section id="investimento">
+      <h2>Investimento &amp; Próximos Passos</h2>
+      <p>Envie “Estado Online 5.0” pelo WhatsApp ou e-mail para receber <strong>agenda, proposta e cronograma</strong> da próxima turma.</p>
+      <div class="cta-row" style="margin-top:8px;">
+        <a class="btn btn-primary" href="https://wa.me/5591980144854" target="_blank">📱 Falar no WhatsApp</a>
+        <a class="btn btn-ghost" href="mailto:drclaudiocutrim@gmail.com" target="_blank">📧 Solicitar Proposta</a>
+      </div>
+      <p class="note" style="margin-top:10px;">Se for necessário construir tecnologia, a execução segue para o <strong>For Inventors</strong> (protótipo, IP, POC técnica).</p>
+    </section>
+  </main>
+
+  <footer>© 2025 NexialBusiness. Todos os direitos reservados.</footer>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Habitação & Interiores 5.0 — NexialBusiness</title>
+<style>
+:root{
+  /* Paleta: arquitetura noturna (ardósia) + cobre (obra) + menta (interiores) + azul (digital) */
+  --bg:#0b1116;    /* slate escuro */
+  --hero:#0e1a22;  /* topo profundo */
+  --panel:#0f2230; /* seções */
+  --card:#132a3a;  /* cartões */
+  --text:#eaf6ff;  /* off-white azulado */
+  --muted:#9fb7c7; /* cinza-azul suave */
+  --accent:#f59e0b;   /* cobre/âmbar */
+  --accent-2:#2dd4bf; /* menta/teal */
+  --accent-3:#60a5fa; /* azul digital */
+  --shadow:rgba(96,165,250,.14);
+  --ring:rgba(245,158,11,.22);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+  background:
+    radial-gradient(1200px 820px at 85% -10%, rgba(96,165,250,.10), transparent 60%),
+    radial-gradient(1000px 760px at -10% 25%, rgba(245,158,11,.10), transparent 60%),
+    var(--bg);
+  color:var(--text);line-height:1.65
+}
+
+/* HERO */
+header{
+  background:linear-gradient(180deg,var(--hero) 0%, rgba(14,26,34,.92) 60%, transparent 100%);
+  padding:56px 20px 24px;text-align:center;position:relative;overflow:hidden
+}
+.brand-badge{
+  display:inline-block;padding:6px 12px;border-radius:999px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#0b1116;font-weight:700;font-size:12px;letter-spacing:.4px;
+  box-shadow:0 0 0 6px var(--ring),0 10px 30px var(--shadow)
+}
+h1{margin:18px auto 10px;font-size:36px;max-width:1080px;line-height:1.15}
+.subtitle{color:var(--muted);max-width:1020px;margin:10px auto 26px;font-size:18px}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:6px auto 10px}
+.btn{
+  display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;
+  font-weight:700;border:1px solid transparent;transition:.2s;font-size:15px
+}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#0b1116}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 24px var(--shadow)}
+.btn-ghost{border-color:rgba(255,255,255,.16);color:var(--text);background:rgba(255,255,255,.03)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.32);background:rgba(255,255,255,.06)}
+.btn-invest{background:var(--accent-3);color:#0b1116}
+.btn-invest:hover{filter:brightness(1.06)}
+.ribbon{
+  background:linear-gradient(90deg,rgba(245,158,11,.12),rgba(45,212,191,.12));
+  border:1px dashed rgba(255,255,255,.16);padding:14px 16px;border-radius:12px;
+  text-align:center;margin:18px 0 8px;color:var(--muted)
+}
+
+.wrap{max-width:1120px;margin:24px auto 60px;padding:0 20px}
+section{
+  background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;
+  padding:28px;margin:18px 0;box-shadow:0 10px 30px var(--shadow)
+}
+section h2{margin:0 0 12px;font-size:24px;color:var(--accent)}
+p{margin:0 0 14px;font-size:17px}
+ul{margin:8px 0 6px 0;padding-left:18px} li{margin:8px 0}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:18px}
+.dot{color:var(--accent-2);margin-right:6px}
+.badge{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:.3px;
+  padding:6px 10px;border-radius:999px;background:rgba(96,165,250,.12);
+  color:var(--accent-3);border:1px solid rgba(96,165,250,.35)
+}
+.note{color:var(--muted);font-size:15px}
+
+.kpis{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.kpi{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:8px 10px;border-radius:10px;font-size:14px}
+
+/* TRILHAS */
+.hab h2{color:var(--accent)}               /* cobre = obra */
+.int h2{color:var(--accent-2)}             /* menta = interiores */
+
+/* FOOTER & RESPONSIVO */
+footer{text-align:center;color:var(--muted);font-size:14px;padding:28px 0 40px}
+@media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}h1{font-size:28px}}
+</style>
+</head>
+<body>
+<header>
+  <span class="brand-badge">NEXIALBUSINESS • Programa Executivo</span>
+  <h1>Habitação &amp; Interiores 5.0 — Do Digital Twin ao Mobiliário Inteligente (execução em 90 dias)</h1>
+  <p class="subtitle">
+    Inovação radical no ambiente construído: <strong>BIM/Digital Twin</strong>, <strong>automação &amp; IoT</strong>,
+    <strong>materiais e superfícies inteligentes</strong>, <strong>design paramétrico</strong>, <strong>produção modular</strong>
+    e <strong>Economia Anti-Assimétrica</strong>. Decisões claras (buy vs. build, risco, ROI) e pilotos com KPIs diretos do P&amp;L.
+  </p>
+  <div class="cta-row">
+    <a class="btn btn-primary" target="_blank" href="https://wa.me/5591980144854">📱 Falar no WhatsApp</a>
+    <a class="btn btn-ghost" target="_blank" href="mailto:drclaudiocutrim@gmail.com">📧 Solicitar Proposta</a>
+    <a class="btn btn-invest" href="#investimento">💰 Ver Investimento</a>
+  </div>
+  <div class="Ribbon ribbon">Curso Livre com Certificação Executiva • Para Donos, Diretores, Arquitetos, Engenheiros &amp; Indústria</div>
+</header>
+
+<main class="wrap">
+  <!-- O QUE É NB -->
+  <section>
+    <h2>O que é a NexialBusiness (NB)</h2>
+    <p>
+      A <strong>NexialBusiness</strong> capacita líderes a transformar construção, moradia e interiores em
+      <strong>plataformas de valor recorrente</strong>. Você aprende o <strong>Essencial Tecnológico e Científico</strong>
+      em linguagem executiva para decidir <em>buy vs. build</em>, reduzir riscos regulatórios e
+      <strong>executar MVP/POC em 90 dias</strong>.
+    </p>
+    <div class="grid-3" style="margin-top:10px">
+      <div class="card"><span class="badge">Decisão</span><p><span class="dot">●</span>Decision Memos (1 pág.): problema, opções, ROI, risco e próximo passo (14 dias).</p></div>
+      <div class="card"><span class="badge">Arquitetura</span><p><span class="dot">●</span>Mapa de Solução: BIM/Digital Twin, IoT, materiais, parceiros/RFP e critérios.</p></div>
+      <div class="card"><span class="badge">Execução</span><p><span class="dot">●</span>Plano MVP/POC 90 dias: 3 sprints, KPIs e orçamento com gates.</p></div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section>
+    <h2>Por que este programa é diferente</h2>
+    <div class="grid-2">
+      <div class="card">
+        <p><span class="dot">●</span><strong>Da obra ao uso:</strong> projeto, construção e vida útil integrados por dados (CAPEX→OPEX).</p>
+        <p><span class="dot">●</span><strong>Sem silos:</strong> engenharia, arquitetura, manufatura, varejo e serviços orquestrados.</p>
+        <p><span class="dot">●</span><strong>Moats de longo prazo:</strong> <em>Economia Anti-Assimétrica</em> com dados consentidos, comunidade e canais diretos.</p>
+      </div>
+      <div class="card">
+        <p><span class="dot">●</span><strong>Compliance por design:</strong> segurança, desempenho (NBRs), acessibilidade, LGPD/IoT e consumidor.</p>
+        <p><span class="dot">●</span><strong>Do quadro ao canteiro/sala:</strong> pilotos com dados reais e plano de escala 90→180 dias.</p>
+        <p class="note">Marketing: “Destruição Criativa da Habitação Tradicional” • Conselho: “Executiva, Segura e Mensurável”.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PÚBLICO-ALVO -->
+  <section>
+    <h2>Público-Alvo</h2>
+    <div class="grid-3">
+      <div class="card"><p><span class="dot">●</span>Incorporadoras, construtoras, administradoras condominiais.</p></div>
+      <div class="card"><p><span class="dot">●</span>Arquitetos, engenheiros, fabricantes de mobiliário e varejo de interiores.</p></div>
+      <div class="card"><p><span class="dot">●</span>Operadores de locação, coliving, hospitality residencial e investidores.</p></div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section>
+    <h2>Como funciona</h2>
+    <ul>
+      <li><strong>Duração:</strong> 8–12 semanas • 2 encontros/semana (sessão executiva + Schumpeter Lab).</li>
+      <li><strong>Formato:</strong> aulas gravadas curtas + encontros ao vivo + templates.</li>
+      <li><strong>Entrega:</strong> Decision Memos, Mapa de Solução e Plano MVP/POC 90 dias.</li>
+      <li><strong>Certificação:</strong> Curso livre com certificação executiva.</li>
+    </ul>
+  </section>
+
+  <!-- TRONCO COMUM -->
+  <section>
+    <h2>Tronco Comum — Essencial Tecnológico &amp; Científico Nexial</h2>
+    <div class="grid-2">
+      <div class="card">
+        <p><span class="dot">●</span><strong>IA &amp; Data Mesh do Ambiente Construído</strong> — interoperabilidade, gemelar digital e manutenção preditiva.</p>
+        <p><span class="dot">●</span><strong>Robótica, Automação &amp; Controle</strong> — IoT, BACnet/KNX, gateways, rotinas e segurança.</p>
+        <p><span class="dot">●</span><strong>Materiais &amp; Superfícies Inteligentes</strong> — antibacterianos, low VOC, acústica e TCO.</p>
+        <p><span class="dot">●</span><strong>Sustentabilidade &amp; ACV</strong> — energia/água/resíduos, créditos e certificações.</p>
+      </div>
+      <div class="card">
+        <p><span class="dot">●</span><strong>Neuroeconomia da Experiência</strong> — luz, som, conforto, hábito e recorrência.</p>
+        <p><span class="dot">●</span><strong>Direito Aplicado</strong> — normas técnicas, LGPD/IoT, consumidor e anti-contenda.</p>
+        <p><span class="dot">●</span><strong>Administração &amp; Operações 5.0</strong> — SLAs, contratos por desempenho e P&amp;L.</p>
+        <p><span class="dot">●</span><strong>Economia Anti-Assimétrica</strong> — dados proprietários, comunidade e assinaturas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRILHA A: HABITAÇÃO -->
+  <section class="hab">
+    <h2>Trilha A — Habitação 5.0 (Construção &amp; Habitat Inteligente)</h2>
+    <div class="grid-2">
+      <div class="card">
+        <p><span class="dot">●</span><strong>BIM/Digital Twin</strong> — projeto integrado, orçamentos dinâmicos e Clash Detection.</p>
+        <p><span class="dot">●</span><strong>Prefabricação &amp; Modular</strong> — industrialização, lead time e qualidade.</p>
+        <p><span class="dot">●</span><strong>Eficiência &amp; Qualidade do Ar</strong> — energia, ventilação, acústica e monitoramento.</p>
+        <p><span class="dot">●</span><strong>IoT Predial</strong> — sensores, manutenção preditiva e portarias/segurança.</p>
+      </div>
+      <div class="card">
+        <p><span class="dot">●</span><strong>Gestão de Obra 5.0</strong> — cronograma, suprimentos, drones e rastreabilidade.</p>
+        <p><span class="dot">●</span><strong>Viabilidade &amp; Financiamento</strong> — CAPEX→OPEX, TIR e contratos de desempenho.</p>
+        <p><span class="dot">●</span><strong>Compliance &amp; Desempenho</strong> — NBRs, acessibilidade e segurança.</p>
+        <p><span class="dot">●</span><strong>Parcerias &amp; RFP</strong> — critérios técnicos/negociais e observabilidade.</p>
+      </div>
+    </div>
+    <div style="margin-top:10px" class="kpis">
+      <div class="kpi">Custo por m²</div>
+      <div class="kpi">Prazo/atraso de obra</div>
+      <div class="kpi">Consumo energético</div>
+      <div class="kpi">Índice de incidentes</div>
+      <div class="kpi">NPS do morador</div>
+    </div>
+  </section>
+
+  <!-- TRILHA B: INTERIORES & MÓVEIS -->
+  <section class="int">
+    <h2>Trilha B — Interiores &amp; Móveis 5.0 (Mobiliário Inteligente)</h2>
+    <div class="grid-2">
+      <div class="card">
+        <p><span class="dot">●</span><strong>Design Paramétrico &amp; Mass Customization</strong> — catálogo vivo e ajuste por ambiente.</p>
+        <p><span class="dot">●</span><strong>CNC &amp; Manufatura Digital</strong> — 3D printing, corte e tolerâncias.</p>
+        <p><span class="dot">●</span><strong>Materiais &amp; Saúde</strong> — antibacterianos, low VOC e superfícies fáceis de limpar.</p>
+        <p><span class="dot">●</span><strong>Móveis Conectados (IoT)</strong> — telemetria, ergonomia e manutenção.</p>
+      </div>
+      <div class="card">
+        <p><span class="dot">●</span><strong>Logística, Last-mile &amp; Instalação</strong> — SLA, roteirização e experiência.</p>
+        <p><span class="dot">●</span><strong>D2C e Marketplaces</strong> — pricing, mídia própria e mensuração.</p>
+        <p><span class="dot">●</span><strong>Circularidade</strong> — take-back, refurbish e reciclagem.</p>
+        <p><span class="dot">●</span><strong>Parcerias &amp; RFP</strong> — fornecedores, varejo e critérios de desempenho.</p>
+      </div>
+    </div>
+    <div style="margin-top:10px" class="kpis">
+      <div class="kpi">Margem por SKU</div>
+      <div class="kpi">Giro/ruptura</div>
+      <div class="kpi">NPS da instalação</div>
+      <div class="kpi">% receita recorrente</div>
+      <div class="kpi">Tempo de entrega</div>
+    </div>
+  </section>
+
+  <!-- EIXO JURÍDICO -->
+  <section>
+    <h2>Eixo Jurídico Nexial (Aplicado a Habitação &amp; Interiores)</h2>
+    <div class="grid-2">
+      <div class="card">
+        <p><span class="dot">●</span><strong>Anti-Contenda</strong> — prevenção de litígios por design: evidências, ODR e contratos por desempenho.</p>
+        <p><span class="dot">●</span><strong>LGPD &amp; IoT</strong> — consentimento granular, DSRs, logs e auditoria contínua.</p>
+      </div>
+      <div class="card">
+        <p><span class="dot">●</span><strong>Consumidor &amp; Normas Técnicas</strong> — conformidade com NBRs e segurança de produto.</p>
+        <p><span class="dot">●</span><strong>Cripto/Tokenização (quando fizer sentido)</strong> — garantias, fidelidade e KYC/AML/fiscal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MVP/POC -->
+  <section>
+    <h2>KPIs do MVP/POC (90 dias)</h2>
+    <div class="kpis">
+      <div class="kpi">Capex/Opex por unidade</div>
+      <div class="kpi">Tempo de obra/instalação</div>
+      <div class="kpi">Consumo energético/água</div>
+      <div class="kpi">Incidentes de privacidade/compliance</div>
+      <div class="kpi">NPS do morador/cliente</div>
+      <div class="kpi">Receita de serviços/assinaturas</div>
+    </div>
+  </section>
+
+  <!-- INVESTIMENTO -->
+  <section id="investimento">
+    <h2>Investimento &amp; Próximos Passos</h2>
+    <p>
+      Envie “Habitação &amp; Interiores 5.0” pelo WhatsApp ou e-mail para receber <strong>agenda, proposta e cronograma</strong> da próxima turma corporativa ou aberta.
+    </p>
+    <div class="cta-row" style="margin-top:8px">
+      <a class="btn btn-primary" target="_blank" href="https://wa.me/5591980144854">📱 Falar no WhatsApp</a>
+      <a class="btn btn-ghost" target="_blank" href="mailto:drclaudiocutrim@gmail.com">📧 Solicitar Proposta</a>
+    </div>
+    <p class="note" style="margin-top:10px">
+      Se houver necessidade de P&amp;D de produto ou protótipo, a execução segue no <strong>For Inventors</strong> após a decisão executiva (protótipo, IP, POC técnica).
+    </p>
+  </section>
+</main>
+
+<footer>© 2025 NexialBusiness. Todos os direitos reservados.</footer>
+</body>
+</html>

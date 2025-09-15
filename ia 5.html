@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>IA 5.0 — NexialBusiness</title>
+<style>
+:root{
+  /* Paleta: futuro (indigo + magenta + ciano) */
+  --bg:#0a0b16; --hero:#10122b; --panel:#13173a; --card:#181d4a;
+  --text:#eef0ff; --muted:#b4b9e3;
+  --accent:#a78bfa; --accent-2:#22d3ee; --accent-3:#fb7185;
+  --shadow:rgba(34,211,238,.14); --ring:rgba(167,139,250,.22);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",Tahoma, Geneva, Verdana, sans-serif;background:
+  radial-gradient(1200px 800px at 85% -10%, rgba(167,139,250,.10), transparent 60%),
+  radial-gradient(900px 700px at -10% 25%, rgba(34,211,238,.10), transparent 60%),var(--bg);
+color:var(--text);line-height:1.65}
+header{background:linear-gradient(180deg,var(--hero)0%,rgba(16,18,43,.92)60%,transparent 100%);
+padding:56px 20px 24px;text-align:center}
+.brand-badge{display:inline-block;padding:6px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#0a0b16;font-weight:700;font-size:12px;letter-spacing:.4px;box-shadow:0 0 0 6px var(--ring),0 10px 30px var(--shadow)}
+h1{margin:18px auto 10px;font-size:36px;max-width:1080px;line-height:1.15}
+.subtitle{color:var(--muted);max-width:980px;margin:10px auto 26px;font-size:18px}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:6px auto 10px}
+.btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;border:1px solid transparent;transition:.2s;font-size:15px}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#0a0b16}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 24px var(--shadow)}
+.btn-ghost{border-color:rgba(255,255,255,.16);color:var(--text);background:rgba(255,255,255,.03)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.32);background:rgba(255,255,255,.06)}
+.btn-invest{background:var(--accent-3);color:#0a0b16}
+.wrap{max-width:1100px;margin:24px auto 60px;padding:0 20px}
+section{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:28px;margin:18px 0;box-shadow:0 10px 30px var(--shadow)}
+section h2{margin:0 0 12px;font-size:24px;color:var(--accent)}
+p{margin:0 0 14px;font-size:17px}
+ul{margin:8px 0 6px 0;padding-left:18px} li{margin:8px 0}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:18px}
+.dot{color:var(--accent-2);margin-right:6px}
+.badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.3px;padding:6px 10px;border-radius:999px;background:rgba(34,211,238,.12);color:var(--accent-2);border:1px solid rgba(34,211,238,.35)}
+.note{color:var(--muted);font-size:15px}
+.ribbon{background:linear-gradient(90deg,rgba(167,139,250,.12),rgba(34,211,238,.12));border:1px dashed rgba(255,255,255,.16);padding:14px 16px;border-radius:12px;text-align:center;margin:18px 0 8px;color:var(--muted)}
+.kpis{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.kpi{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:8px 10px;border-radius:10px;font-size:14px}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:28px 0 40px}
+@media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}h1{font-size:28px}}
+</style>
+</head>
+<body>
+<header>
+  <span class="brand-badge">NEXIALBUSINESS • Programa Executivo</span>
+  <h1>IA 5.0 — Estratégia, Moats de Dados &amp; Execução em 90 dias (da ideia ao ROI)</h1>
+  <p class="subtitle">
+    Inovação radical com <strong>Fundation/GenAI</strong>, <strong>RAG &amp; Agentes</strong>,
+    <strong>MLOps</strong> e <strong>Segurança/Compliance</strong>. Decisões claras (buy vs. build, risco, ROI),
+    pilhas mínimas viáveis e <strong>planos de MVP/POC</strong> orientados a KPIs do P&amp;L.
+  </p>
+  <div class="cta-row">
+    <a class="btn btn-primary" target="_blank" href="https://wa.me/5591980144854">📱 Falar no WhatsApp</a>
+    <a class="btn btn-ghost" target="_blank" href="mailto:drclaudiocutrim@gmail.com">📧 Solicitar Proposta</a>
+    <a class="btn btn-invest" href="#investimento">💰 Ver Investimento</a>
+  </div>
+  <div class="ribbon">Curso Livre com Certificação Executiva • Formato para Donos, Diretores &amp; C-Level</div>
+</header>
+
+<main class="wrap">
+  <section>
+    <h2>O que é a NexialBusiness (NB)</h2>
+    <p>A <strong>NexialBusiness</strong> capacita executivos a transformar IA em <strong>vantagem competitiva mensurável</strong>.
+      Você aprende o <strong>Essencial Tecnológico e Científico</strong> em linguagem de negócio para decidir
+      <em>buy vs. build</em>, reduzir risco jurídico e <strong>executar pilotos de alto impacto</strong>.</p>
+    <div class="grid-3">
+      <div class="card"><span class="badge">Decisão</span><p><span class="dot">●</span>Decision Memos (1 pág.) — problema, opções, ROI, risco e próximo passo (14 dias).</p></div>
+      <div class="card"><span class="badge">Arquitetura</span><p><span class="dot">●</span>Mapa de Solução — dados, modelos, integrações, parceiros/RFP, critérios de escolha.</p></div>
+      <div class="card"><span class="badge">Execução</span><p><span class="dot">●</span>Plano MVP/POC 90 dias — 3 sprints, KPIs, orçamento e gates de decisão.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Por que este programa é diferente</h2>
+    <div class="grid-2">
+      <div class="card">
+        <p><span class="dot">●</span><strong>Sem silos:</strong> produto, dados, engenharia, jurídico e finanças em orquestração única.</p>
+        <p><span class="dot">●</span><strong>Moats de dados:</strong> <em>Economia Anti-Assimétrica</em> (dados proprietários, canais diretos, comunidade).</p>
+        <p><span class="dot">●</span><strong>Da ideia ao deploy:</strong> hipóteses → protótipo → piloto pago → escala.</p>
+      </div>
+      <div class="card">
+        <p><span class="dot">●</span><strong>Governança por design:</strong> LGPD, copyright, MRM (Model Risk Management), explicabilidade.</p>
+        <p><span class="dot">●</span><strong>FinOps/AI:</strong> custo por inferência, SLOs de latência e qualidade de resposta.</p>
+        <p class="note">Marketing: “Destruição Criativa” • Conselho: “Executiva, Segura e Escalável”.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Público-Alvo</h2>
+    <div class="grid-3">
+      <div class="card"><p><span class="dot">●</span>Donos e diretores (produto, dados, tech, operações, marketing).</p></div>
+      <div class="card"><p><span class="dot">●</span>Heads de IA/MLOps, segurança, jurídico/regulatório.</p></div>
+      <div class="card"><p><span class="dot">●</span>Investidores e PMEs com ambição de plataforma.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Conteúdo Programático — IA 5.0 (Executivo Nexial)</h2>
+    <div class="grid-2">
+      <div class="card">
+        <p><span class="dot">●</span><strong>Fundation/GenAI &amp; Multimodal</strong> — modelos, agentes, RAG, guardrails.</p>
+        <p><span class="dot">●</span><strong>Dados &amp; MLOps</strong> — data quality, features, avaliação, observabilidade.</p>
+        <p><span class="dot">●</span><strong>Arquitetura &amp; Integrações</strong> — APIs, ERPs/CRMs, eventos e automações.</p>
+        <p><span class="dot">●</span><strong>Segurança &amp; Privacidade</strong> — LGPD, soberania, isolation e auditoria.</p>
+        <p><span class="dot">●</span><strong>Administração &amp; Operações 5.0</strong> — processos, SLAs e contratos por desempenho.</p>
+      </div>
+      <div class="card">
+        <p><span class="dot">●</span><strong>Hardware &amp; Edge</strong> — aceleração, custo/latência, capex/opex.</p>
+        <p><span class="dot">●</span><strong>Neuroeconomia da Adoção</strong> — incentivos, UX e mudança de hábito.</p>
+        <p><span class="dot">●</span><strong>Economia Anti-Assimétrica</strong> — dados proprietários, recorrência, comunidade.</p>
+        <p><span class="dot">●</span><strong>Plataformas &amp; Parcerias</strong> — marketplaces, RFP e critérios técnicos/negociais.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>KPIs do MVP/POC (90 dias)</h2>
+    <div class="kpis">
+      <div class="kpi">Tempo até 1º modelo em produção</div>
+      <div class="kpi">Qualidade (precision/CSAT)</div>
+      <div class="kpi">Custo por inferência</div>
+      <div class="kpi">Lead time de automações</div>
+      <div class="kpi">Deflexão de chamados</div>
+      <div class="kpi">Receita/usuário impactado</div>
+      <div class="kpi">Incidentes de compliance</div>
+    </div>
+  </section>
+
+  <section id="investimento">
+    <h2>Investimento &amp; Próximos Passos</h2>
+    <p>Envie “IA 5.0” pelo WhatsApp ou e-mail para receber <strong>agenda, proposta e cronograma</strong> da próxima turma.</p>
+    <div class="cta-row" style="margin-top:8px">
+      <a class="btn btn-primary" target="_blank" href="https://wa.me/5591980144854">📱 Falar no WhatsApp</a>
+      <a class="btn btn-ghost" target="_blank" href="mailto:drclaudiocutrim@gmail.com">📧 Solicitar Proposta</a>
+    </div>
+    <p class="note" style="margin-top:10px">Se exigir construção tecnológica, a execução segue no <strong>For Inventors</strong> (protótipo, IP, POC técnica).</p>
+  </section>
+</main>
+<footer>© 2025 NexialBusiness. Todos os direitos reservados.</footer>
+</body>
+</html>

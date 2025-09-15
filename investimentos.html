@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Investimentos — NexialBusiness 5.0</title>
+<style>
+:root{
+  /* Paleta executiva base */
+  --bg:#0a0d14; --hero:#0c1624; --panel:#0f1f33; --card:#132a3f;
+  --text:#eaf2ff; --muted:#97a9c2;
+  --accent:#22d3ee; --accent2:#34d399; --accent3:#f59e0b;
+  --ring:rgba(34,211,238,.22); --shadow:rgba(34,211,238,.14);
+}
+
+/* Temas setoriais (gradientes dos rótulos) */
+.theme-hospital      { --c1:#ef4444; --c2:#f59e0b; }   /* rubi → âmbar */
+.theme-supermercado  { --c1:#10b981; --c2:#f59e0b; }   /* esmeralda → âmbar */
+.theme-hotel         { --c1:#fbbf24; --c2:#60a5fa; }   /* dourado → azul */
+.theme-varejo        { --c1:#fb923c; --c2:#22d3ee; }   /* tangerina → ciano */
+.theme-ia            { --c1:#22d3ee; --c2:#60a5fa; }   /* ciano → azul */
+.theme-justica       { --c1:#8b5cf6; --c2:#0ea5e9; }   /* violeta → azul-céu */
+.theme-meioambiente  { --c1:#22c55e; --c2:#0ea5e9; }   /* verde → azul-céu */
+.theme-saude         { --c1:#14b8a6; --c2:#60a5fa; }   /* teal → azul */
+.theme-habitacao     { --c1:#f59e0b; --c2:#2dd4bf; }   /* âmbar → menta */
+.theme-vida          { --c1:#ec4899; --c2:#06b6d4; }   /* rosa → turquesa */
+.theme-agro          { --c1:#16a34a; --c2:#a3e635; }   /* verde → lima */
+.theme-estado        { --c1:#3b82f6; --c2:#06b6d4; }   /* royal → turquesa */
+
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(1200px 820px at 85% -10%, rgba(34,211,238,.10), transparent 60%),
+    radial-gradient(1000px 760px at -10% 25%, rgba(52,211,153,.08), transparent 60%),
+    var(--bg);
+  color:var(--text); line-height:1.65;
+}
+
+/* HERO */
+header{
+  background:linear-gradient(180deg, var(--hero) 0%, rgba(12,22,36,.92) 60%, transparent 100%);
+  padding:64px 20px 28px; text-align:center; position:relative; overflow:hidden;
+}
+.brand-badge{
+  display:inline-block; padding:6px 12px; border-radius:999px;
+  background:linear-gradient(90deg, var(--accent), var(--accent2));
+  color:#0a0d14; font-weight:700; font-size:12px; letter-spacing:.4px;
+  box-shadow:0 0 0 6px var(--ring), 0 10px 30px var(--shadow);
+}
+h1{margin:20px auto 10px; font-size:38px; max-width:1100px; line-height:1.12}
+.subtitle{color:var(--muted); max-width:1050px; margin:10px auto 26px; font-size:18px}
+.ribbon{
+  background:linear-gradient(90deg, rgba(34,211,238,.12), rgba(52,211,153,.12));
+  border:1px dashed rgba(255,255,255,.16); padding:14px 16px; border-radius:12px;
+  text-align:center; margin:20px auto 0; color:var(--muted); max-width:900px;
+}
+
+/* WRAPPER & SECTIONS */
+.wrap{max-width:1200px; margin:26px auto 70px; padding:0 20px}
+section{
+  background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:14px;
+  padding:28px; margin:18px 0; box-shadow:0 10px 30px var(--shadow);
+}
+section h2{margin:0 0 12px; font-size:24px; color:var(--accent)}
+p{margin:0 0 14px; font-size:17px}
+.note{color:var(--muted); font-size:15px}
+
+/* GRID */
+.grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
+@media (max-width:1100px){ .grid{grid-template-columns:repeat(2, 1fr)} }
+@media (max-width:720px){ .grid{grid-template-columns:1fr} }
+
+/* CARD DE CURSO */
+.card{
+  background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:18px;
+  display:flex; flex-direction:column; gap:12px; position:relative; overflow:hidden;
+}
+.label{
+  display:inline-block; font-size:12px; font-weight:800; letter-spacing:.3px; color:#0a0d14;
+  background:linear-gradient(90deg, var(--c1), var(--c2)); padding:6px 10px; border-radius:999px;
+  box-shadow:0 4px 18px rgba(0,0,0,.25);
+}
+.card h3{margin:4px 0 4px; font-size:20px}
+.tagline{color:var(--muted); font-size:15px; margin-top:-6px}
+.price-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:4px}
+.price{
+  background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);
+  padding:8px 10px; border-radius:10px; font-size:14px
+}
+.actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:6px}
+.btn{
+  display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none;
+  font-weight:700; font-size:14px; border:1px solid transparent; transition:.2s;
+}
+.btn:hover{transform:translateY(-1px)}
+.whats{background:#25d366; color:#0a0d14}
+.email{background:#0081ff; color:#fff}
+.invest{background:var(--accent3); color:#0a0d14}
+.saiba{background:linear-gradient(90deg, var(--accent), var(--accent2)); color:#0a0d14}
+
+/* LISTAS EXECUTIVAS */
+.bullet{list-style:none; padding-left:0; margin:10px 0 0}
+.bullet li{margin:8px 0; position:relative; padding-left:20px}
+.bullet li:before{content:"•"; color:var(--accent2); position:absolute; left:0; top:0; line-height:1.1}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="brand-badge">NEXIALBUSINESS • Investimentos</span>
+  <h1>Investimentos — Programas Executivos 5.0</h1>
+  <p class="subtitle">
+    Programas únicos no mundo: <strong>ruptura</strong> de modelos de negócio baseada em <strong>ciência</strong> e
+    <strong>tecnologia</strong> integradas (Nexialismo). Diferente de cursos tradicionais, aqui você decide, prototipa e
+    executa um <strong>MVP/POC em até 90 dias</strong>.
+  </p>
+  <div class="ribbon">Curso Livre com Certificação Executiva • Para Donos, Diretores, Fundadores e Conselheiros</div>
+</header>
+
+<main class="wrap">
+
+  <!-- POR QUE O INVESTIMENTO SE PAGA -->
+  <section>
+    <h2>Por que o investimento se paga</h2>
+    <ul class="bullet">
+      <li><strong>Decisão com base científica</strong> (buy vs. build, risco, ROI) — reduz custo de tentativa/erro.</li>
+      <li><strong>Execução orientada a P&amp;L</strong> — MVP/POC com KPIs claros de margem, crescimento e eficiência.</li>
+      <li><strong>Economia Anti-Assimétrica</strong> — dados proprietários e modelos difíceis de copiar (moats).</li>
+      <li><strong>Pipeline de novos negócios</strong> — produtos/serviços e startups que ainda não existem no mercado.</li>
+    </ul>
+    <p class="note">
+      Programas executivos internacionais de ponta cobrem estratégia ou tecnologia isoladamente; a NB combina
+      <em>decisão + arquitetura + execução</em> com mentoria e entregáveis executivos (Decision Memo, Mapa de Solução e Plano MVP/POC).
+    </p>
+  </section>
+
+  <!-- COMPARATIVO INTERNACIONAL -->
+  <section>
+    <h2>Comparativo internacional (visão executiva)</h2>
+    <ul class="bullet">
+      <li><strong>Top schools</strong> (EUA/Europa): ótimos módulos de gestão/tech, mas pouca integração com operação e KPIs de P&amp;L.</li>
+      <li><strong>NB</strong>: integra <em>ciência+engenharias+direito+economia</em> com decisão e execução — e abre caminho para <em>spin-offs</em> e parcerias.</li>
+      <li><strong>Resultado</strong>: risco menor, tempo menor e ativos estratégicos proprietários (dados, IP, processos).</li>
+    </ul>
+  </section>
+
+  <!-- TABELA POR CURSO -->
+  <section>
+    <h2>Investimentos por programa</h2>
+    <p class="note">Valores em R$ (BRL). Impostos e despesas específicas podem variar por escopo/contrato.</p>
+
+    <div class="grid">
+
+      <!-- HOSPITAL 5.0 -->
+      <article class="card theme-hospital">
+        <span class="label">Hospital 5.0</span>
+        <h3>IA, Robótica & Operações 5.0 para margem e desfecho</h3>
+        <p class="tagline">Complexidade regulatória alta • Infra crítica • LGPD/saúde</p>
+        <div class="price-row">
+          <span class="price"><strong>Individual (turma aberta):</strong> R$ 24.997</span>
+          <span class="price"><strong>Corporate (até 10 líderes):</strong> R$ 169.000</span>
+          <span class="price"><strong>Corporate + MVP/POC 90d:</strong> R$ 329.000</span>
+        </div>
+        <div class="actions">
+          <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+          <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+          <a class="btn invest" href="hospital 5.html#investimento">Investimento</a>
+          <a class="btn saiba" href="hospital 5.html">Saiba Mais</a>
+        </div>
+      </article>
+
+      <!-- SAÚDE 5.0 -->
+      <article class="card theme-saude">
+        <span class="label">Saúde 5.0</span>
+        <h3>Valor por desfecho, integração de sistemas e P&amp;L sustentável</h3>
+        <p class="tagline">Redesenho do cuidado • Data mesh • Tele & domiciliar</p>
+        <div class="price-row">
+          <span class="price"><strong>Individual:</strong> R$ 24.997</span>
+          <span class="price"><strong>Corporate (10):</strong> R$ 169.000</span>
+          <span class="price"><strong>Corporate + MVP/POC:</strong> R$ 329.000</span>
+        </div>
+        <div class="actions">
+          <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+          <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+          <a class="btn invest" href="saúde 5.html#investimento">Investimento</a>
+          <a class="btn saiba" href="saúde 5.html">Saiba Mais</a>
+        </div>
+      </article>
+
+      <!-- JUSTIÇA 5.0 -->
+      <article class="card theme-justica">
+        <span class="label">Justiça 5.0</span>
+        <h3>ODR, automação de fluxos e prova digital</h3>
+        <p class="tagline">Compliance elevado • Interoperabilidade • Anti-contenda</p>
+        <div class="price-row">
+          <span class="price"><strong>Individual:</strong> R$ 24.997</span>
+          <span class="price"><strong>Corporate (10):</strong> R$ 169.000</span>
+          <span class="price"><strong>Corporate + MVP/POC:</strong> R$ 329.000</span>
+        </div>
+        <div class="actions">
+          <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+          <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+          <a class="btn invest" href="justiça 5.html#investimento">Investimento</a>
+          <a class="btn saiba" href="justiça 5.html">Saiba Mais</a>
+        </div>
+      </article>
+
+      <!-- ESTADO ONLINE 5.0 -->
+      <article class="card theme-estado">
+        <span class="label">Estado Online 5.0</span>
+        <h3>Plataformas públicas/privadas orientadas a desfecho</h3>
+        <p class="tagline">Identidade, ODR, serviços digitais, governança e métricas</p>
+        <div class="price-row">
+          <span class="price"><strong>Individual:</strong> R$ 24.997</span>
+          <span class="price"><strong>Corporate (10):</strong> R$ 179.000</span>
+          <span class="price"><strong>Corporate + MVP/POC:</strong> R$ 339.000</span>
+        </div>
+        <div class="actions">
+          <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+          <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+          <a class="btn invest" href="estado online 5.html#investimento">Investimento</a>
+          <a class="btn saiba" href="estado online 5.html">Saiba Mais</a>
+        </div>
+      </article>
+
+      <!-- VAREJO 5.0 -->
+      <article class="card theme-varejo">
+        <span class="label">Varejo 5.0</span>
+        <h3>Omnichannel, retail media e operações data-driven</h3>
+        <p class="tagline">Sortimento & pricing • Checkout • Last-mile</p>
+        <div class="price-row">
+          <span class="price"><strong>Individual:</strong> R$ 21.997</span>
+          <span class="price"><strong>Corporate (10):</strong> R$ 149.000</span>
+          <span class="price"><strong>Corporate + MVP/POC:</strong> R$ 289.000</span>
+        </div>
+        <div class="actions">
+          <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+          <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+          <a class="btn invest" href="varejo 5.html#investimento">Investimento</a>
+          <a class="btn saiba" href="varejo 5.html">Saiba Mais</a>
+        </div>
+      </article>
+
+      <!-- SUPERMERCADO 5.0 -->
+      <article class="card theme-supermercado">
+        <span class="label">Supermercado 5.0</span>
+        <h3>Dados proprietários, cadeia fria e automação</h3>
+        <p class="tagline">Visão computacional • Ruptura/shrinkage • Operação 5.0</p>
+        <div class="price-row">
+          <span class="price"><strong>Individual:</strong> R$ 21.997</span>
+          <span class="price"><strong>Corporate (10):</strong> R$ 149.000</span>
+          <span class="price"><strong>Corporate + MVP/POC:</strong> R$ 289.000</span>
+        </div>
+        <div class="actions">
+          <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+          <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+          <a class="btn invest" href="supermercado 5.html#investimento">Investimento</a>
+          <a class="btn saiba" href="supermercado 5.html">Saiba Mais</a>
+        </div>
+      </article>
+
+      <!-- HOTEL 5.0 -->
+      <article class="card theme-hotel">
+        <span class="label">Hotel 5.0</span>
+        <h3>Revenue management, experiência e eficiência</h3>
+        <p class="tagline">RM & IA • Building systems • Operação 5.0</p>
+        <div class="price-row">
+          <span class="price"><strong>Individual:</strong> R$ 21.997</span>
+          <span class="price"><strong>Corporate (10):</strong> R$ 149.000</span>
+          <span class="price"><strong>Corporate + MVP/POC:</strong> R$ 289.000</span>
+        </div>
+        <div class="actions">
+          <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+          <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+          <a class="btn invest" href="hotel 5.html#investimento">Investimento</a>
+          <a class="btn saiba" href="hotel 5.html">Saiba Mais</a>
+        </div>
+      </article>
+
+      <!-- IA 5.0 -->
+      <article class="card theme-ia">
+        <span class="label">IA 5.0</span>
+        <h3>Estratégia, moats de dados e agentes — do piloto ao ROI</h3>
+        <p class="tagline">GenAI & RAG • MLOps • Segurança & compliance</p>
+        <div class="price-row">
+          <span class="price"><strong>Individual:</strong> R$ 21.997</span>
+          <span class="price"><strong>Corporate (10):</strong> R$ 149.000</span>
+          <span class="price"><strong>Corporate + MVP/POC:</strong> R$ 289.000</span>
+        </div>
+        <div class="actions">
+          <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+          <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+          <a class="btn invest" href="ia 5.html#investimento">Investimento</a>
+          <a class="btn saiba" href="ia 5.html">Saiba Mais</a>
+        </div>
+      </article>
+
+      <!-- HABITAÇÃO & INTERIORES 5.0 -->
+      <article class="card theme-habitacao">
+        <span class="label">Habitação & Interiores 5.0</span>
+        <h3>Do digital twin ao mobiliário inteligente</h3>
+        <p class="tagline">BIM/DT • IoT • Materiais & ACV • Execução 90d</p>
+        <div class="price-row">
+          <span class="price"><strong>Individual:</strong> R$ 19.997</span>
+          <span class="price"><strong>Corporate (10):</strong> R$ 129.000</span>
+          <span class="price"><strong>Corporate + MVP/POC:</strong> R$ 249.000</span>
+        </div>
+        <div class="actions">
+          <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+          <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+          <a class="btn invest" href="habitacao interiores.html#investimento">Investimento</a>
+          <a class="btn saiba" href="habitacao interiores.html">Saiba Mais</a>
+        </div>
+      </article>
+
+      <!-- MEIO AMBIENTE 5.0 -->
+      <article class="card theme-meioambiente">
+        <span class="label">Meio Ambiente 5.0</span>
+        <h3>Do ESG de vitrine ao ESG de performance</h3>
+        <p class="tagline">Sensoriamento & IA • Remediação • Compliance</p>
+        <div class="price-row">
+          <span class="price"><strong>Individual:</strong> R$ 19.997</span>
+          <span class="price"><strong>Corporate (10):</strong> R$ 129.000</span>
+          <span class="price"><strong>Corporate + MVP/POC:</strong> R$ 249.000</span>
+        </div>
+        <div class="actions">
+          <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+          <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+          <a class="btn invest" href="meio ambiente 5.html#investimento">Investimento</a>
+          <a class="btn saiba" href="meio ambiente 5.html">Saiba Mais</a>
+        </div>
+      </article>
+
+      <!-- VIDA 5.0 -->
+      <article class="card theme-vida">
+        <span class="label">Vida 5.0</span>
+        <h3>Longevidade, bem-estar e experiências escaláveis</h3>
+        <p class="tagline">Wearables & IA • Personalização • Parcerias</p>
+        <div class="price-row">
+          <span class="price"><strong>Individual:</strong> R$ 19.997</span>
+          <span class="price"><strong>Corporate (10):</strong> R$ 129.000</span>
+          <span class="price"><strong>Corporate + MVP/POC:</strong> R$ 249.000</span>
+        </div>
+        <div class="actions">
+          <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+          <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+          <a class="btn invest" href="vida 5_1.html#investimento">Investimento</a>
+          <a class="btn saiba" href="vida 5_1.html">Saiba Mais</a>
+        </div>
+      </article>
+
+      <!-- AGRONEGÓCIO 5.0 -->
+      <article class="card theme-agro">
+        <span class="label">Agronegócio 5.0</span>
+        <h3>Do insumo ao mercado: eficiência, qualidade e novos canais</h3>
+        <p class="tagline">IoT & visão • Cadeia fria • FinOps rural</p>
+        <div class="price-row">
+          <span class="price"><strong>Individual:</strong> R$ 19.997</span>
+          <span class="price"><strong>Corporate (10):</strong> R$ 129.000</span>
+          <span class="price"><strong>Corporate + MVP/POC:</strong> R$ 249.000</span>
+        </div>
+        <div class="actions">
+          <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+          <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+          <a class="btn invest" href="agro 5.html#investimento">Investimento</a>
+          <a class="btn saiba" href="agro 5.html">Saiba Mais</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- MODELOS DE PARCERIA -->
+  <section>
+    <h2>Modelos de parceria e criação de valor</h2>
+    <ul class="bullet">
+      <li><strong>Advisory + Execução</strong> — diagnóstico, decisão e implementação de MVP/POC.</li>
+      <li><strong>Spin-offs & Startups</strong> — projetos podem evoluir para novos negócios (equity/royalties a negociar).</li>
+      <li><strong>Transição para P&amp;D (For Inventors)</strong> — quando houver necessidade de protótipo/IP.</li>
+    </ul>
+    <p class="note">Os acordos societários (quando aplicável) são tratados caso a caso, após validação de mercado e due diligence.</p>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="contato">
+    <h2>Próximos passos</h2>
+    <p>Fale direto para agenda, diagnóstico inicial e adequação do escopo ao seu P&amp;L.</p>
+    <div class="actions" style="gap:12px">
+      <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">📱 WhatsApp</a>
+      <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">📧 E-mail</a>
+    </div>
+  </section>
+
+</main>
+
+<footer style="text-align:center; color:var(--muted); font-size:14px; padding:30px 0 40px">
+  © 2025 NexialBusiness. Todos os direitos reservados.
+</footer>
+
+</body>
+</html>

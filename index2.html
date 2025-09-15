@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NexialBusiness 5.0 — Portfólio Executivo</title>
+  <style>
+    :root{
+      /* Paleta executiva: navy profundo + teal (ciência) + âmbar (valor) */
+      --bg:#0a0d14;
+      --hero:#0c1624;
+      --panel:#0f1f33;
+      --card:#132a3f;
+      --text:#eaf2ff;
+      --muted:#97a9c2;
+      --accent:#22d3ee;   /* ciência/dados */
+      --accent2:#34d399;  /* execução/eficiência */
+      --accent3:#f59e0b;  /* valor/negócio */
+      --ring:rgba(34,211,238,.22);
+      --shadow:rgba(34,211,238,.14);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background:
+        radial-gradient(1200px 820px at 85% -10%, rgba(34,211,238,.10), transparent 60%),
+        radial-gradient(1000px 760px at -10% 25%, rgba(52,211,153,.08), transparent 60%),
+        var(--bg);
+      color:var(--text); line-height:1.65;
+    }
+
+    /* HERO */
+    header{
+      background:linear-gradient(180deg, var(--hero) 0%, rgba(12,22,36,.92) 60%, transparent 100%);
+      padding:64px 20px 28px; text-align:center; position:relative; overflow:hidden;
+    }
+    .brand-badge{
+      display:inline-block; padding:6px 12px; border-radius:999px;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      color:#0a0d14; font-weight:700; font-size:12px; letter-spacing:.4px;
+      box-shadow:0 0 0 6px var(--ring), 0 10px 30px var(--shadow);
+    }
+    h1{
+      margin:20px auto 10px; font-size:38px; max-width:1100px; line-height:1.12; letter-spacing:.2px;
+    }
+    .subtitle{
+      color:var(--muted); max-width:1000px; margin:10px auto 26px; font-size:18px;
+    }
+    .cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:8px auto 0}
+    .btn{
+      display:inline-block; padding:12px 18px; border-radius:12px; text-decoration:none;
+      font-weight:700; border:1px solid transparent; transition:.2s; font-size:15px;
+    }
+    .btn-primary{background:linear-gradient(90deg, var(--accent), var(--accent2)); color:#0a0d14;}
+    .btn-primary:hover{transform:translateY(-1px); box-shadow:0 8px 24px var(--shadow);}
+    .btn-ghost{border-color:rgba(255,255,255,.16); color:var(--text); background:rgba(255,255,255,.03)}
+    .btn-ghost:hover{border-color:rgba(255,255,255,.32); background:rgba(255,255,255,.06)}
+    .btn-invest{background:var(--accent3); color:#0a0d14;}
+    .btn-invest:hover{filter:brightness(1.06)}
+    .ribbon{
+      background:linear-gradient(90deg, rgba(34,211,238,.12), rgba(52,211,153,.12));
+      border:1px dashed rgba(255,255,255,.16);
+      padding:14px 16px; border-radius:12px; text-align:center; margin:20px auto 0; color:var(--muted);
+      max-width:900px;
+    }
+
+    /* WRAPPER & SECTIONS */
+    .wrap{max-width:1200px; margin:26px auto 70px; padding:0 20px}
+    section{
+      background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:14px;
+      padding:28px; margin:18px 0; box-shadow:0 10px 30px var(--shadow);
+    }
+    section h2{margin:0 0 12px; font-size:24px; color:var(--accent); letter-spacing:.3px}
+    p{margin:0 0 14px; font-size:17px}
+    .note{color:var(--muted); font-size:15px}
+
+    /* GRID DE CARDS */
+    .grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
+    @media (max-width:1100px){ .grid{grid-template-columns:repeat(2, 1fr)} }
+    @media (max-width:720px){ .grid{grid-template-columns:1fr} }
+
+    .card{
+      background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:18px;
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .card h3{margin:4px 0 4px; font-size:20px}
+    .tagline{color:var(--muted); font-size:15px; margin-top:-6px}
+    .kpis{display:flex; flex-wrap:wrap; gap:8px; margin-top:2px}
+    .kpi{background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); padding:6px 10px; border-radius:10px; font-size:13px}
+    .card .actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:6px}
+
+    .whats{background:#25d366; color:#0a0d14}
+    .email{background:#0081ff; color:#fff}
+    .invest{background:var(--accent3); color:#0a0d14}
+    .saiba{background:linear-gradient(90deg, var(--accent), var(--accent2)); color:#0a0d14}
+
+    /* BLOCO AUTOR & NEXIALISMO */
+    .cols{display:grid; grid-template-columns:1.1fr .9fr; gap:16px}
+    @media (max-width:960px){ .cols{grid-template-columns:1fr} }
+    .bullet{list-style:none; padding-left:0; margin:10px 0 0}
+    .bullet li{margin:8px 0; position:relative; padding-left:20px}
+    .bullet li:before{
+      content:"•"; color:var(--accent2); position:absolute; left:0; top:0; line-height:1.1
+    }
+
+    footer{text-align:center; color:var(--muted); font-size:14px; padding:30px 0 40px}
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header>
+    <span class="brand-badge">NEXIALBUSINESS • Programas Executivos 5.0</span>
+    <h1>Cursos Interdisciplinares para Empreendedores Visionários</h1>
+    <p class="subtitle">
+      Mais que um curso: um ambiente de <strong>ruptura</strong> com modelos de negócio tradicionais.
+      Aprenda (e decida) com base em <strong>ciência</strong> e <strong>tecnologia</strong> — IA, robótica, materiais,
+      biotecnologia, direito e economia — conectadas à realidade do <strong>P&amp;L</strong> e à execução em <strong>90 dias</strong>.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" target="_blank" href="https://wa.me/5591980144854">📱 Falar no WhatsApp</a>
+      <a class="btn btn-ghost" target="_blank" href="mailto:drclaudiocutrim@gmail.com">📧 Falar por E-mail</a>
+      <!-- ALTERADO: link direto para a página de investimentos -->
+      <a class="btn btn-invest" href="investimentos.html">💰 Ver Investimento</a>
+    </div>
+    <div class="ribbon">Curso Livre com Certificação Executiva • Para Donos, Diretores, Fundadores e Conselheiros</div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- O QUE É NEXIALISMO -->
+    <section>
+      <h2>O que é Nexialismo — e por que ele cria vantagem competitiva</h2>
+      <div class="cols">
+        <div>
+          <p>
+            <strong>Nexialismo</strong> é a habilidade de conectar áreas que o ensino tradicional mantém em silos —
+            engenharia, saúde, direito, economia, computação — para <strong>resolver problemas de negócio</strong> com
+            rigor técnico e simplicidade executiva. Na prática, isso significa:
+          </p>
+          <ul class="bullet">
+            <li>Decidir <em>buy vs. build</em>, risco e ROI com base em ciência, dados e operações.</li>
+            <li>Transformar tecnologia em margem: automação, IA, materiais, biotech e processos.</li>
+            <li>Usar <strong>Economia Anti-Assimétrica</strong> para criar moats que concorrentes não copiam.</li>
+          </ul>
+          <p class="note">Sem jargões. Sem enrolação. Direto ao ponto — e ao resultado.</p>
+        </div>
+        <div>
+          <h2>Quem conduz</h2>
+          <p>
+            Programa criado por um professor com trajetória <strong>interdisciplinar rara</strong> (medicina, engenharia,
+            direito e economia), PhD em Engenharia de Materiais, médico ortopedista (pós-grad. em reumatologia), com
+            pesquisa aplicada em <em>biotecnologia, drug delivery, IA, robótica, micro &amp; nanotecnologia, engenharia de tecidos</em>
+            e <em>economia da saúde</em>. Experiência de ponta em pronto-socorros e projetos tecnológicos.
+          </p>
+          <p class="note">Autor da tese de <em>Inovacionismo Multidimensional</em> e abordagens como <em>Economia Anti-Assimétrica</em>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- METODOLOGIA & ENTREGÁVEIS -->
+    <section>
+      <h2>Metodologia & Entregáveis</h2>
+      <p>Formato executivo, orientado a decisão e à execução em 90 dias:</p>
+      <ul class="bullet">
+        <li><strong>Decision Memo (1 pág.)</strong> por eixo: problema, opções, risco, ROI.</li>
+        <li><strong>Mapa de Solução</strong> (tech stack, parceiros, RFP, compliance).</li>
+        <li><strong>Plano MVP/POC 90 dias</strong> com KPIs, orçamento e cronograma.</li>
+      </ul>
+      <p class="note">Aulas 100% online. 2–3 encontros/semana. Linguagem clara. Sem pré-requisitos matemáticos avançados.</p>
+    </section>
+
+    <!-- GRADE DE PROGRAMAS -->
+    <section>
+      <h2>Portfólio 5.0 — Escolha seu setor</h2>
+      <div class="grid">
+
+        <!-- Hospital 5.0 -->
+        <article class="card">
+          <h3>Hospital 5.0</h3>
+          <p class="tagline">IA, Robótica & Operações 5.0 para margem e desfecho clínico.</p>
+          <div class="kpis"><span class="kpi">Buy vs. Build</span><span class="kpi">ODx→ROI</span><span class="kpi">MVP em 90 dias</span></div>
+          <div class="actions">
+            <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+            <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+            <!-- ALTERADO: anchor na página de investimentos -->
+            <a class="btn invest" href="investimentos.html#hospital5">Investimento</a>
+            <a class="btn saiba" href="hospital 5.html">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- Supermercado 5.0 -->
+        <article class="card">
+          <h3>Supermercado 5.0</h3>
+          <p class="tagline">Dados proprietários, cadeia fria e automação para reescrever margens.</p>
+          <div class="kpis"><span class="kpi">Pricing 2.0</span><span class="kpi">Visão Computacional</span><span class="kpi">Last-mile</span></div>
+          <div class="actions">
+            <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+            <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+            <a class="btn invest" href="investimentos.html#supermercado5">Investimento</a>
+            <a class="btn saiba" href="supermercado 5.html">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- Hotel 5.0 -->
+        <article class="card">
+          <h3>Hotel 5.0</h3>
+          <p class="tagline">Revenue Management, experiência e eficiência para elevar RevPAR.</p>
+          <div class="kpis"><span class="kpi">RM & IA</span><span class="kpi">Building Systems</span><span class="kpi">Operação 5.0</span></div>
+          <div class="actions">
+            <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+            <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+            <a class="btn invest" href="investimentos.html#hotel5">Investimento</a>
+            <a class="btn saiba" href="hotel 5.html">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- Varejo 5.0 -->
+        <article class="card">
+          <h3>Varejo 5.0</h3>
+          <p class="tagline">Omnichannel, retail media e operações data-driven.</p>
+          <div class="kpis"><span class="kpi">Sortimento & Pricing</span><span class="kpi">Checkout inteligente</span><span class="kpi">MVP 90d</span></div>
+          <div class="actions">
+            <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+            <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+            <a class="btn invest" href="investimentos.html#varejo5">Investimento</a>
+            <a class="btn saiba" href="varejo 5.html">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- IA 5.0 -->
+        <article class="card">
+          <h3>IA 5.0</h3>
+          <p class="tagline">Estratégia, moats de dados e agentes — do piloto ao ROI.</p>
+          <div class="kpis"><span class="kpi">GenAI & RAG</span><span class="kpi">MLOps</span><span class="kpi">Segurança</span></div>
+          <div class="actions">
+            <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+            <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+            <a class="btn invest" href="investimentos.html#ia5">Investimento</a>
+            <a class="btn saiba" href="ia 5.html">Saiba Mais</a>
+          </div>
+        </article>
+
+    
+
+        <!-- Meio Ambiente 5.0 -->
+        <article class="card">
+          <h3>Meio Ambiente 5.0</h3>
+          <p class="tagline">Do ESG de vitrine ao ESG de performance — custo↓, receita↑.</p>
+          <div class="kpis"><span class="kpi">Sensoriamento & IA</span><span class="kpi">Remediação</span><span class="kpi">Compliance</span></div>
+          <div class="actions">
+            <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+            <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+            <a class="btn invest" href="investimentos.html#meioambiente5">Investimento</a>
+            <a class="btn saiba" href="meio ambiente 5.html">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- Saúde 5.0 -->
+        <article class="card">
+          <h3>Saúde 5.0</h3>
+          <p class="tagline">Valor por desfecho, sistemas integrados e P&amp;L sustentável.</p>
+          <div class="kpis"><span class="kpi">Data Mesh</span><span class="kpi">Operações 5.0</span><span class="kpi">Tele & Domiciliar</span></div>
+          <div class="actions">
+            <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+            <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+            <a class="btn invest" href="investimentos.html#saude5">Investimento</a>
+            <a class="btn saiba" href="saúde 5.html">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- Habitação & Interiores 5.0 -->
+        <article class="card">
+          <h3>Habitação &amp; Interiores 5.0</h3>
+          <p class="tagline">Do digital twin ao mobiliário inteligente — execução em 90 dias.</p>
+          <div class="kpis"><span class="kpi">BIM/Digital Twin</span><span class="kpi">IoT</span><span class="kpi">Materiais</span></div>
+          <div class="actions">
+            <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+            <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+            <a class="btn invest" href="investimentos.html#habitacao5">Investimento</a>
+            <a class="btn saiba" href="habitacao interiores.html">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- Vida 5.0 -->
+        <article class="card">
+          <h3>Vida 5.0</h3>
+          <p class="tagline">Plataformas de longevidade, bem-estar e experiências escaláveis.</p>
+          <div class="kpis"><span class="kpi">Wearables & IA</span><span class="kpi">Personalização</span><span class="kpi">Parcerias</span></div>
+          <div class="actions">
+            <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+            <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+            <a class="btn invest" href="investimentos.html#vida5">Investimento</a>
+            <a class="btn saiba" href="vida 5_1.html">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- Agronegócio 5.0 -->
+        <article class="card">
+          <h3>Agronegócio 5.0</h3>
+          <p class="tagline">Do insumo ao mercado: eficiência, qualidade e nova captura de valor.</p>
+          <div class="kpis"><span class="kpi">IoT & Visão</span><span class="kpi">Cadeia Fria</span><span class="kpi">FinOps Rural</span></div>
+          <div class="actions">
+            <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+            <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+            <a class="btn invest" href="investimentos.html#agro5">Investimento</a>
+            <a class="btn saiba" href="agro 5.html">Saiba Mais</a>
+          </div>
+        </article>
+
+        <!-- Estado Online 5.0 -->
+        <article class="card">
+          <h3>Estado Online 5.0</h3>
+          <p class="tagline">Plataformas públicas/privadas orientadas a desfecho e eficiência.</p>
+          <div class="kpis"><span class="kpi">ODR & Serviços</span><span class="kpi">Identidade & Prova</span><span class="kpi">Economia Anti-Assimétrica</span></div>
+          <div class="actions">
+            <a class="btn whats" target="_blank" href="https://wa.me/5591980144854">WhatsApp</a>
+            <a class="btn email" target="_blank" href="mailto:drclaudiocutrim@gmail.com">E-mail</a>
+            <a class="btn invest" href="investimentos.html#estado5">Investimento</a>
+            <a class="btn saiba" href="estado online 5.html">Saiba Mais</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2025 NexialBusiness. Todos os direitos reservados.
+  </footer>
+</body>
+</html>

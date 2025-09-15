@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre o Autor — NexialBusiness</title>
+  <style>
+    :root{
+      --bg:#0a0d14; --hero:#0c1624; --panel:#0f1f33; --card:#132a3f;
+      --text:#eaf2ff; --muted:#97a9c2;
+      --accent:#22d3ee; --accent2:#34d399; --accent3:#f59e0b;
+      --ring:rgba(34,211,238,.22); --shadow:rgba(34,211,238,.14);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background:
+        radial-gradient(1200px 820px at 85% -10%, rgba(34,211,238,.10), transparent 60%),
+        radial-gradient(1000px 760px at -10% 25%, rgba(52,211,153,.08), transparent 60%),
+        var(--bg);
+      color:var(--text); line-height:1.65;
+    }
+
+    header{
+      background:linear-gradient(180deg, var(--hero) 0%, rgba(12,22,36,.92) 60%, transparent 100%);
+      padding:64px 20px 28px; text-align:center; position:relative; overflow:hidden;
+    }
+    .brand-badge{
+      display:inline-block; padding:6px 12px; border-radius:999px;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      color:#0a0d14; font-weight:700; font-size:12px; letter-spacing:.4px;
+      box-shadow:0 0 0 6px var(--ring), 0 10px 30px var(--shadow);
+    }
+    h1{margin:20px auto 10px; font-size:38px; max-width:1100px; line-height:1.12}
+    .subtitle{color:var(--muted); max-width:1000px; margin:10px auto 26px; font-size:18px}
+
+    .wrap{max-width:1200px; margin:26px auto 70px; padding:0 20px}
+    section{
+      background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:14px;
+      padding:28px; margin:18px 0; box-shadow:0 10px 30px var(--shadow);
+    }
+    section h2{margin:0 0 12px; font-size:24px; color:var(--accent)}
+    p{margin:0 0 14px; font-size:17px}
+    .note{color:var(--muted); font-size:15px}
+
+    .cols{display:grid; grid-template-columns:1.1fr .9fr; gap:20px}
+    @media (max-width:980px){ .cols{grid-template-columns:1fr} }
+    .two{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    @media (max-width:960px){ .two{grid-template-columns:1fr} }
+
+    .card{
+      background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:18px;
+    }
+    .pill{
+      display:inline-block; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
+      padding:6px 10px; border-radius:999px; font-size:12px; margin:4px 6px 0 0;
+    }
+    .bullets{list-style:none; padding-left:0; margin:8px 0 0}
+    .bullets li{margin:8px 0; position:relative; padding-left:20px}
+    .bullets li:before{content:"•"; color:var(--accent2); position:absolute; left:0; top:0; line-height:1.1}
+
+    .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:8px}
+    .btn{
+      display:inline-block; padding:12px 18px; border-radius:12px; text-decoration:none;
+      font-weight:700; border:1px solid transparent; transition:.2s; font-size:15px;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(90deg, var(--accent), var(--accent2)); color:#0a0d14}
+    .btn-outline{background:rgba(255,255,255,.04); color:var(--text); border-color:rgba(255,255,255,.18)}
+    .btn-invest{background:var(--accent3); color:#0a0d14}
+
+    footer{text-align:center; color:var(--muted); font-size:14px; padding:30px 0 40px}
+    .small{font-size:14px; color:var(--muted)}
+    .quote{
+      border-left:4px solid var(--accent2); padding-left:12px; color:var(--muted); font-style:italic;
+    }
+
+    .avatar{
+      width:100%; aspect-ratio:4/3; border-radius:12px;
+      background:linear-gradient(135deg, rgba(34,211,238,.2), rgba(52,211,153,.15));
+      border:1px solid rgba(255,255,255,.08);
+      display:flex; align-items:center; justify-content:center; color:var(--muted);
+      font-weight:700; letter-spacing:.4px;
+    }
+    .tm{font-weight:800; letter-spacing:.3px}
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="brand-badge">NEXIALBUSINESS • Sobre o Autor</span>
+  <h1>Autor & Fundador — Trajetória Nexialista</h1>
+  <p class="subtitle">
+    Formação médica, engenharias, direito e economia — integradas em um <strong>método de ruptura</strong> que conecta
+    ciência, tecnologia e negócios para criar vantagem competitiva real.
+  </p>
+</header>
+
+<main class="wrap">
+
+  <!-- PERFIL -->
+  <section class="cols">
+    <div>
+      <h2>Quem conduz</h2>
+      <p>
+        Médico ortopedista (pós-graduação em reumatologia), com ~5 anos em pronto-socorros como clínico geral e mais de
+        20 anos em cirurgia ortopédica/trauma. Engenheiro mecânico, <strong>Mestre e Doutor em Engenharia Mecânica</strong>
+        (Engenharia de Materiais e Processos de Fabricação, UNICAMP), com pesquisa aplicada em <em>biotecnologia,
+        drug delivery, IA, robótica, micro & nanotecnologia, engenharia de tecidos, biomateriais</em> e
+        <em>economia da saúde</em>.
+      </p>
+      <p>
+        Também <strong>Engenheiro Ambiental</strong>, <strong>Engenheiro da Computação</strong>, <strong>Bacharel em Direito</strong>,
+        e pós-graduado em Administração para Engenheiros. Cursou integralmente as disciplinas do mestrado em Engenharia Elétrica
+        (Automação & Controle), posteriormente aproveitadas no mestrado em Engenharia Mecânica (UFPA/UNICAMP).
+      </p>
+      <p>
+        <strong>Doutorando em Economia</strong> (defesa prevista para 2026), com investigações em <em>economia da saúde,
+        economia política do bem-estar, neuroeconomia</em> e <em>economia anti-assimétrica</em>. Iniciou doutorado em Agronomia e
+        pós-doutorado em Produção Animal; em credenciamento para pós-doutorado em Psicologia aplicada ao Direito (Neurodireito
+        e Direito Anti-Contenda).
+      </p>
+      <p class="quote">
+        “Meu diferencial é um raciocínio <strong>nexialista</strong>: conecto ciências humanas, exatas, biológicas e artes
+        para criar soluções tecnológicas e teóricas que geram valor econômico.”
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" target="_blank" href="https://wa.me/5591980144854">📱 Conversar no WhatsApp</a>
+        <a class="btn btn-outline" target="_blank" href="mailto:drclaudiocutrim@gmail.com">📧 Conversar por E-mail</a>
+      </div>
+    </div>
+    <div>
+      <div class="avatar">FOTO / LOGO AQUI</div>
+      <div style="margin-top:14px" class="small">Substitua acima por uma foto 4:3 ou logomarca, se desejar.</div>
+    </div>
+  </section>
+
+  <!-- PLATAFORMAS INVENTADAS -->
+  <section>
+    <h2>Plataformas inventadas</h2>
+
+    <div class="two">
+      <div class="card">
+        <h3 class="tm">NexialBusiness™ — Programas Executivos 5.0</h3>
+        <p>
+          Plataforma para <strong>donos, diretores e empreendedores</strong> que pretendem <strong>reformatar modelos de negócio</strong>
+          setoriais (Hospital 5.0, Justiça 5.0, Varejo 5.0, etc.) com base em ciência e tecnologia integradas ao <strong>P&amp;L</strong>.
+          Entrega <em>Decision Memo</em>, <em>Mapa de Solução</em> e <em>Plano MVP/POC de 90 dias</em>, com KPIs e orçamento.
+        </p>
+        <div>
+          <span class="pill">Decisão baseada em ciência</span>
+          <span class="pill">Execução em 90 dias</span>
+          <span class="pill">Moats (dados/IP/processos)</span>
+          <span class="pill">Spin-offs & Startups</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="tm">For Inventors™ — Formação Criadora</h3>
+        <p>
+          Plataforma para <strong>inventores e construtores</strong> que desejam <strong>prototipar tecnologias, IP e produtos</strong>
+          (médicas, engenharias, computação, direito aplicado, economia). Aulas acessíveis e incubação pela
+          <a href="https://cerebral.top" target="_blank" style="color:#22d3ee">Cerebral.top</a>, com possibilidade de
+          <strong>sociedade</strong> em projetos nascidos no curso.
+        </p>
+        <div>
+          <span class="pill">Prototipagem & IP</span>
+          <span class="pill">Incubação online</span>
+          <span class="pill">Seja Sócio</span>
+          <span class="pill">Transdisciplinar</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="note" style="margin-top:10px">
+      As plataformas são complementares: a NB acelera decisão/execução executiva; a FI aprofunda a construção técnica e a geração de IP.
+    </p>
+  </section>
+
+  <!-- IMPACTO & VISÃO -->
+  <section>
+    <h2>Dimensão da invenção</h2>
+    <p>
+      O desenho conjunto de <strong>NexialBusiness™</strong> e <strong>For Inventors™</strong> cria uma <strong>plataforma de mudança sistêmica</strong>:
+      do diagnóstico com rigor científico até a criação de protótipos e novos negócios. Em vez de cursos isolados por disciplina,
+      integramos <em>engenharias, saúde, direito, economia e computação</em> para <strong>resolver problemas concretos</strong> e
+      <strong>criar mercados</strong> — com linguagem clara e acessível.
+    </p>
+    <div style="margin-top:10px">
+      <span class="pill">Ruptura de modelos legados</span>
+      <span class="pill">Desfecho → P&amp;L</span>
+      <span class="pill">Arquiteturas setoriais</span>
+      <span class="pill">Governança & Compliance</span>
+    </div>
+  </section>
+
+  <!-- COMPARATIVO INTERNACIONAL (VISÃO EXECUTIVA) -->
+  <section>
+    <h2>Comparativo internacional (visão executiva)</h2>
+    <div class="two">
+      <div class="card">
+        <h3>O que grandes escolas entregam</h3>
+        <ul class="bullets">
+          <li><strong>Estratégia e liderança</strong> com estudos de caso e exercícios (cargas curtas, 6–8 semanas, ou trilhas anuais).</li>
+          <li>Excelência em <strong>gestão</strong> ou <strong>temas digitais</strong> (ex.: IA) para tomada de decisão informada.</li>
+          <li>Alguns programas de saúde focam <strong>valor por desfecho</strong> e reorganização do cuidado.</li>
+        </ul>
+        <p class="note">Referem-se a programas abertos e certificados, com forte base conceitual e networking.</p>
+      </div>
+      <div class="card">
+        <h3>Como a NexialBusiness™ difere</h3>
+        <ul class="bullets">
+          <li><strong>Integração técnica-prática setorial</strong> (engenharias, saúde, direito, economia) orientada a <strong>P&amp;L</strong>.</li>
+          <li><strong>Entregáveis executivos</strong> (Decision Memo, Mapa de Solução, Plano MVP/POC 90d) por eixo.</li>
+          <li><strong>Opcional de sociedade</strong> e transição direta para a construção (For Inventors™) quando houver IP/protótipo.</li>
+        </ul>
+        <p class="note">Baseado em análise pública de ementas e formatos — nosso foco é complementar e aplicado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PESQUISA & OBRAS -->
+  <section class="two">
+    <div class="card">
+      <h2>Linhas de pesquisa</h2>
+      <ul class="bullets">
+        <li>Nanotecnologia, microtecnologia, <strong>BioMEMS/MEMS</strong>.</li>
+        <li>Biotecnologia, <strong>engenharia de tecidos</strong>, biomateriais, sistemas anti-infecção e biorreatores implantáveis.</li>
+        <li>IA aplicada, robótica, automação & controle.</li>
+        <li>Economia da saúde, <strong>economia das doenças</strong> e economia política do bem-estar.</li>
+        <li>Direito aplicado: <em>Neurodireito</em>, <em>Direito Anti-Contenda</em> e LGPD.</li>
+        <li>Interseções com artes (cinema/música) para comunicação e impacto cultural.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Teorias & obras (em publicação)</h2>
+      <ul class="bullets">
+        <li><strong>Inovacionismo Multidimensional</strong></li>
+        <li><strong>Economia Anti-Assimétrica</strong> e economia de simetria/anti-assimétrica</li>
+        <li><strong>Teoria do Estado Online</strong></li>
+        <li>Vetores neuroeconômicos e <strong>Renda Neuroeconômica</strong></li>
+        <li><strong>Neurodireito & Neuroeconomia</strong>; <em>Superdemocracia</em></li>
+        <li><em>Economia das Doenças</em> e <em>A Nova Economia da Saúde</em></li>
+        <li><em>A Administração das Escolhas — Neuroeconomia</em> e <em>Neuroeconomia da Prosperidade</em></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <h2>Converse diretamente</h2>
+    <p>Para turmas corporativas, palestras e parcerias:</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" target="_blank" href="https://wa.me/5591980144854">📱 WhatsApp</a>
+      <a class="btn btn-outline" target="_blank" href="mailto:drclaudiocutrim@gmail.com">📧 E-mail</a>
+      <a class="btn btn-invest" href="investimentos.html">💰 Ver Investimentos</a>
+    </div>
+    <p class="small" style="margin-top:12px">NexialBusiness™ e For Inventors™ são marcas do autor.</p>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 NexialBusiness. Todos os direitos reservados.
+</footer>
+
+</body>
+</html>
